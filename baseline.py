@@ -2,10 +2,21 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.model_selection import GroupShuffleSplit
 
 # 讀資料
-train_df = pd.read_csv("data/train.csv")
-test_df = pd.read_csv("data/test.csv")
+df = pd.read_csv("data/data.csv")
+
+gss = GroupShuffleSplit(test_size=0.2, random_state=42)
+
+train_idx, test_idx = next(
+    gss.split(df, groups=df["text"])
+)
+
+train_df = df.iloc[train_idx]
+test_df = df.iloc[test_idx]
+train_df["label"] = train_df["label"].astype(int)
+test_df["label"] = test_df["label"].astype(int)
 
 X_train = train_df["text"]
 y_train = train_df["label"]
