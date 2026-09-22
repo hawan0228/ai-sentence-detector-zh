@@ -1,6 +1,6 @@
 # 中文 AI 語句分析
 
-本專案是一個中文 AI 文字風格分析的研究與展示 Demo，比較兩種二元分類方法：
+本專案是一個中文 AI 文字風格分析的研究與展示，比較兩種二元分類方法：
 
 1. **Traditional**：Character-level TF-IDF + Logistic Regression
 2. **BERT**：以 `hfl/chinese-roberta-wwm-ext` 微調的本地分類模型
