@@ -1,0 +1,160 @@
+{
+  "generated_at": "2026-03-14T14:33:19.099113+00:00",
+  "seed": 42,
+  "label_mapping": {
+    "0": "human",
+    "1": "ai"
+  },
+  "thresholds": {
+    "lower": 0.35,
+    "upper": 0.65,
+    "method": "conservative_heuristic"
+  },
+  "data_cleaning": {
+    "input_rows": 40532,
+    "empty_rows_removed": 0,
+    "duplicate_rows_removed": 2,
+    "conflicting_texts": 0,
+    "output_rows": 40530,
+    "label_counts": {
+      "0": 22263,
+      "1": 18267
+    }
+  },
+  "splits": {
+    "train": {
+      "rows": 28371,
+      "labels": {
+        "0": {
+          "count": 15584,
+          "ratio": 0.549293
+        },
+        "1": {
+          "count": 12787,
+          "ratio": 0.450707
+        }
+      }
+    },
+    "validation": {
+      "rows": 6079,
+      "labels": {
+        "0": {
+          "count": 3339,
+          "ratio": 0.549268
+        },
+        "1": {
+          "count": 2740,
+          "ratio": 0.450732
+        }
+      }
+    },
+    "test": {
+      "rows": 6080,
+      "labels": {
+        "0": {
+          "count": 3340,
+          "ratio": 0.549342
+        },
+        "1": {
+          "count": 2740,
+          "ratio": 0.450658
+        }
+      }
+    }
+  },
+  "models": {
+    "traditional": {
+      "status": "available",
+      "samples": 6080,
+      "accuracy": 0.9565789473684211,
+      "precision": 0.9732415902140673,
+      "recall": 0.9291970802919708,
+      "f1": 0.9507094846900672,
+      "macro_f1": 0.9559543896113476,
+      "roc_auc": 0.9904767472354562,
+      "pr_auc": 0.9900978928650531,
+      "confusion_matrix": [
+        [
+          3270,
+          70
+        ],
+        [
+          194,
+          2546
+        ]
+      ],
+      "false_positive_rate": 0.020958083832335328,
+      "false_negative_rate": 0.0708029197080292,
+      "average_inference_ms": 0.361195888150465,
+      "evaluation_scope": "independent_test_split"
+    },
+    "bert": {
+      "status": "available",
+      "samples": 6080,
+      "accuracy": 0.9792763157894737,
+      "precision": 0.956993006993007,
+      "recall": 0.9989051094890511,
+      "f1": 0.9775,
+      "macro_f1": 0.9791463414634147,
+      "roc_auc": 0.9991162201145155,
+      "pr_auc": 0.9990324698390163,
+      "confusion_matrix": [
+        [
+          3217,
+          123
+        ],
+        [
+          3,
+          2737
+        ]
+      ],
+      "false_positive_rate": 0.03682634730538922,
+      "false_negative_rate": 0.0010948905109489052,
+      "average_inference_ms": 75.54654549342223,
+      "evaluation_scope": "reference_re_evaluation_not_independent",
+      "warning": "現有 BERT 權重使用 notebook 的舊切分訓練；目前 test 與舊 train 有重疊，此結果只供管線重跑參考。"
+    }
+  },
+  "my_data": {
+    "traditional": {
+      "status": "available",
+      "samples": 286,
+      "cleaning": {
+        "input_rows": 300,
+        "empty_rows_removed": 0,
+        "duplicate_rows_removed": 14,
+        "conflicting_texts": 0,
+        "output_rows": 286,
+        "label_counts": {
+          "1": 286
+        }
+      },
+      "ai_recall_at_0_5": 0.23076923076923078,
+      "mean_ai_probability": 0.383954974744876,
+      "median_ai_probability": 0.35976757825856354,
+      "uncertain_ratio": 0.44405594405594406,
+      "human_likely_ratio": 0.47202797202797203,
+      "ai_likely_ratio": 0.08391608391608392
+    },
+    "bert": {
+      "status": "available",
+      "samples": 286,
+      "cleaning": {
+        "input_rows": 300,
+        "empty_rows_removed": 0,
+        "duplicate_rows_removed": 14,
+        "conflicting_texts": 0,
+        "output_rows": 286,
+        "label_counts": {
+          "1": 286
+        }
+      },
+      "ai_recall_at_0_5": 1.0,
+      "mean_ai_probability": 0.9993521425273869,
+      "median_ai_probability": 0.9994868040084839,
+      "uncertain_ratio": 0.0,
+      "human_likely_ratio": 0.0,
+      "ai_likely_ratio": 1.0
+    }
+  }
+}

@@ -1,5 +1,61 @@
-venv/
+# Python caches and test artefacts
 __pycache__/
-*.pyc
-models/
-data/*.csv
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local secrets and logs
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log
+
+# Notebook and application caches
+.ipynb_checkpoints/
+.gradio/
+gradio_cached_examples/
+.cache/
+huggingface/
+transformers_cache/
+
+# Temporary and generated artefacts
+tmp/
+temp/
+artifacts/
+splits/
+predictions/
+reports/*predictions*
+
+# Private/raw datasets: publish documentation and synthetic format examples only
+data/*
+!data/README.md
+!data/samples.csv
+
+# Trained weights: publish model documentation only
+models/*
+!models/README.md
+*.pkl
+*.pickle
+*.joblib
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.onnx
