@@ -21,10 +21,17 @@
 
 ## Demo 畫面
 
-![中文 AI 語句分析 Demo](docs/images/demo.png)
+<table>
+  <tr>
+    <td>
+      <img src="docs/images/demo.png" alt="中文 AI 語句分析 Demo">
+    </td>
+  </tr>
+</table>
 
 使用者可選擇 Traditional、BERT 或模型比較模式，查看全文分數、逐句分析及模型判斷線索。
-圖中範例原為 2005 年之某篇記者報導片段，兩方法辨識結果皆為人類。
+
+圖中範例原為 2005 年之某篇記者報導片段，兩方法辨識結果皆偏向人類。
 
 ## 訓練資料集
 
