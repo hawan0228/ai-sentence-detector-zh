@@ -4,7 +4,7 @@
 
 ## 資料建構
 
-資料由專案作者從不同平台蒐集，並自行透過多種 AI 模型與 prompt engineering 產出及整理。使用過的模型系列包括 GPT-4o、GPT-4.5、GPT-4 Turbo、Gemini 1.0 Ultra、Gemini 1.5 Pro、Claude 3.5、Llama 3.1 與 Gemma。
+資料由本人從不同平台蒐集，並自行透過多種 AI 模型與 prompt engineering 產出及整理。使用過的模型系列包括 GPT-4o、GPT-4.5、GPT-4 Turbo、Gemini 1.0 Ultra、Gemini 1.5 Pro、Claude 3.5、Llama 3.1 與 Gemma。
 
 資料設計同時納入：
 

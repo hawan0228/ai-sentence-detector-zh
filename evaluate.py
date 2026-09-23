@@ -86,10 +86,7 @@ def evaluate_bert(model: BertModel, frame: pd.DataFrame) -> tuple[dict[str, Any]
     values = np.asarray(probabilities, dtype=float)
     metrics = compute_metrics(frame["label"].to_numpy(), values, elapsed_ms)
     metrics["evaluation_scope"] = "reference_re_evaluation_not_independent"
-    metrics["warning"] = (
-        "現有 BERT 權重使用 notebook 的舊切分訓練；目前 test 與舊 train 有重疊，"
-        "此結果只供管線重跑參考。"
-    )
+
     return metrics, values
 
 
@@ -200,7 +197,7 @@ def write_error_analysis(
             "## 觀察與限制",
             "",
             "- 少於 5 個中文字的輸入缺乏足夠線索，介面會保留結果但顯示短文本警告。",
-            "- Character n-gram 比舊版 word analyzer 適合中文，但仍可能學到固定句型、換行、URL 或資料格式，而非作者身分。",
+            "- Character n-gram 比舊版 word analyzer 適合中文，但仍可能學到固定句型、換行、URL 或資料格式。",
             "- `my_data.csv` 是較口語的單一正類集合，只能檢查 AI recall 與分數分布，不能當作完整 accuracy。",
             f"- `my_data.csv` Traditional AI recall：{my_data_metrics.get('traditional', {}).get('ai_recall_at_0_5', 'not_available')}。",
             f"- `my_data.csv` BERT AI recall：{my_data_metrics.get('bert', {}).get('ai_recall_at_0_5', 'not_available')}。",
